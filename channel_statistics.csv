@@ -1,6 +1,5 @@
-,Channel_name,Subscribers,Views,Total_videos
-0,The Film Theorists,12800000,2954516131,467
-1,penguinz0,14500000,8920126018,5024
-2,The Food Theorists,5200000,875025080,202
-3,The Style Theorists,2470000,227708504,93
-4,The Game Theorists,18900000,4052022840,672
+,Channel_name,Subscribers,Views,Total_videos,Views_per_video
+0,The Style Theorists,2470000,227708504,93,2448478.5376344086
+1,The Film Theorists,12800000,2954516131,467,6326587.004282655
+2,The Food Theorists,5200000,875025080,202,4331807.326732674
+3,The Game Theorists,18900000,4052022840,672,6029795.892857143
