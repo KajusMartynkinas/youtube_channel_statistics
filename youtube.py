@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from googleapiclient.discovery import build
 import pandas as pd
 import seaborn as sns
+import os
 
 
 print('YouTube Channel Comparison')
@@ -49,6 +50,18 @@ df['Views_per_video'] = df['Views']/df['Total_videos']
 
 print(df)
 df.to_csv('channel_statistics.csv')
+folder_path = 'results'
+
+def save_plot(plt, folder_path, file_name):
+    # Check if the folder exists, if not, create it
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+    # Full path for saving the file
+    file_path = os.path.join(folder_path, file_name)
+    # Save the figure
+    plt.savefig(file_path)
+    print(f"Plot saved to {file_path}")
+
 
 def subscribers():
     plt.style.use('dark_background')
@@ -56,6 +69,7 @@ def subscribers():
     plt.title('Comparing Subscribers')
     sns.barplot(x='Channel_name', y = 'Subscribers', data=df, palette='rainbow',
                 order=df.sort_values('Subscribers', ascending=False)['Channel_name'])
+    save_plot(plt, 'results', 'subscribers_comparison.png')
     plt.show()
 
 def total_videos():
@@ -64,6 +78,7 @@ def total_videos():
     plt.title('Comparing Total Amount of Videos')
     sns.barplot(x='Channel_name', y = 'Total_videos', data=df, palette='rainbow',
                 order=df.sort_values('Total_videos', ascending=False)['Channel_name'])
+    save_plot(plt, 'results', 'total_videos.png')
     plt.show()
 
 def views():
@@ -72,6 +87,7 @@ def views():
     plt.title('Comparing Views')
     sns.barplot(x='Channel_name', y = 'Views', data=df, palette='rainbow',
                 order=df.sort_values('Views', ascending=False)['Channel_name'])
+    save_plot(plt, 'results', 'comparing_views.png')
     plt.show()
 
 def views_per_video():
@@ -80,6 +96,7 @@ def views_per_video():
     plt.title('Views per video')
     sns.barplot(x='Channel_name', y='Views_per_video', data=df, palette='rainbow',
                 order=df.sort_values('Views_per_video', ascending=False)['Channel_name'])
+    save_plot(plt, 'results', 'views_per_video.png')
     plt.show()
 
 subscribers()
