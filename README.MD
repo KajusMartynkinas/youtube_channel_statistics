@@ -9,9 +9,15 @@ This tool is designed for users interested in analyzing and comparing statistics
 - Generates comparative bar charts for subscribers, views, and total videos.
 - Saves comparative results to a 'results' folder and outputs data to a CSV file.
 
-## Example
+## Examples
 
-![Example Chart](results/views_per_video.png)
+![Example Chart1](results/views_per_video.png)
+
+![Example Chart2](results/comparing_views.png)
+
+![Example Chart3](results/total_videos.png)
+
+![Example Chart4](results/subscribers_comparison.png)
 
 ## Prerequisites
 
