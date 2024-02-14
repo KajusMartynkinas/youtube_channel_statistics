@@ -1,13 +1,16 @@
 # YouTube Channel Statistics Comparison Tool
 
-This tool is designed for users interested in analyzing and comparing statistics of up to 10 different YouTube channels. It utilizes the YouTube Data API to fetch channel statistics such as subscribers, total views, and total videos. The tool provides a visual and quantitative comparison, allowing for an in-depth analysis of YouTube channels.
-
+This tool is designed for users interested in analyzing and comparing statistics of YouTube channels. 
+It utilizes the YouTube Data API to fetch channel statistics such as subscribers, total views, total videos, 
+and provides a detailed analysis of videos from a single channel if only one channel ID is entered. 
+The tool offers both a visual and quantitative comparison, allowing for an in-depth analysis of YouTube channels and their content.
 ## Features
 
-- Compare statistics of up to 10 YouTube channels.
-- Utilizes YouTube Data API for accurate and up-to-date information.
-- Generates comparative bar charts for subscribers, views, and total videos.
-- Saves comparative results to a 'results' folder and outputs data to a CSV file.
+- **Multi-Channel Comparison**: Compare statistics of up to 10 YouTube channels.
+- **Single-Channel Video Analysis**: Analyze and compare videos from a single YouTube channel if only one channel ID is provided.
+- **Utilizes YouTube Data API**: For accurate and up-to-date information.
+- **Generates Comparative Bar Charts**: For subscribers, views, total videos, and detailed video analysis including most viewed videos.
+- **Data Persistence**: Saves comparative results to a 'results' folder and outputs data to CSV files for both channel and video statistics.
 
 ## Examples
 
@@ -18,6 +21,10 @@ This tool is designed for users interested in analyzing and comparing statistics
 ![Example Chart3](results/total_videos.png)
 
 ![Example Chart4](results/subscribers_comparison.png)
+
+![Example Chart5](results/video_release.png)
+
+![Example Chart6](results/top10_most_commented_videos.png)
 
 ## Prerequisites
 
@@ -39,13 +46,17 @@ cd <repository-directory>
 pip install google-api-python-client pandas matplotlib seaborn
 ```
 ## Output
-The tool will display comparative bar charts for the entered YouTube channels and save these charts in the `results` folder. Additionally, a CSV file named `channel_statistics.csv` containing the fetched data will be created.
+
+The tool provides two types of output depending on the number of YouTube channel IDs entered:
+
+- **Multi-Channel Comparison**: When more than one channel ID is provided, the tool displays comparative bar charts for the entered YouTube channels. These charts visualize comparisons of subscribers, views, total videos, and views per video. The charts are saved in the `results` folder for easy access. Additionally, a CSV file named `channel_statistics.csv` is created in the root directory, containing the fetched data for all compared channels.
+
+- **Single-Channel Video Analysis**: If only one channel ID is entered, the tool shifts focus to analyzing videos from that single channel. It generates detailed charts for metrics such as video views, likes, and comments, highlighting top-performing videos. Similar to the multi-channel comparison, these charts are saved in the `results` folder, and a CSV file named `videos.csv` is created. This file contains detailed statistics for each video analyzed, offering insights into the channel's content performance.
+
+Both output types are designed to provide a comprehensive understanding of YouTube channel performance, either by comparing multiple channels or by diving deep into the content of a single channel.
 
 ## Contributing
 Your contributions are welcome! Please feel free to submit pull requests or open issues to suggest improvements or report bugs.
-
-## License
-This project is licensed under the MIT License - see the `LICENSE` file for details.
 
 ## Acknowledgments
 - This project makes use of the YouTube Data API for fetching channel statistics.
